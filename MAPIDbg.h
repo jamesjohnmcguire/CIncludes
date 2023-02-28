@@ -31,10 +31,10 @@
  *
  *		IFDBG(x)		Results in the expression x if DEBUG is defined, or
  *						to nothing if DEBUG is not defined
- *	
+ *
  *		IFNDBG(x)		Results in the expression x if DEBUG is not defined,
  *						or to nothing if DEBUG is defined
- *	
+ *
  *		Unreferenced(a) Causes a to be referenced so that the compiler
  *						doesn't issue warnings about unused local variables
  *						which exist but are reserved for future use (eg
@@ -67,17 +67,17 @@ typedef unsigned long DWORD;
 
 /*
  *	 Assert Macros ---------------------------------------------------------
- *	
+ *
  *		Assert(a)		Displays a message indicating the file and line number
  *						of this Assert() if a == 0.  OK'ing an assert traps
  *						into the debugger.
- *	
+ *
  *		AssertSz(a,sz)	Works like an Assert(), but displays the string sz
  *						along with the file and line number.
- *	
+ *
  *		Side asserts	A side assert works like an Assert(), but evaluates
  *						'a' even when asserts are not enabled.
- *	
+ *
  *		NF asserts		A NF (Non-Fatal) assert works like an Assert(), but
  *						continues instead of trapping into the debugger when
  *						OK'ed.
@@ -151,7 +151,7 @@ typedef unsigned long DWORD;
 
 /*
  *	 Trace Macros ------------------------------------------------------------
- *	
+ *
  *		DebugTrace			Use for arbitrary formatted output. It
  *							takes exactly the same arguments as the
  *							Windows wsprintf() function.
@@ -233,7 +233,7 @@ EXTERN_C_END
 
 /*
  *	Debugging Macros -------------------------------------------------------
- *	
+ *
  *		SzDecodeScode			Returns the string name of an SCODE
  *		SzDecodeUlPropTag		Returns the string name of a property
  *								tag
@@ -241,7 +241,7 @@ EXTERN_C_END
  *								its value
  *		ScodeFromSz				Given an SCODE's name, returns its
  *								value
- *	
+ *
  *		DBGMEM_Encapsulate		Given an IMalloc interface, adds heap-
  *								checking functionality and returns a
  *								wrapped interface
@@ -296,7 +296,7 @@ EXTERN_C_END
 
 /*
  *	SCODE maps -------------------------------------------------------------
- *	
+ *
  *		ScCheckSc		Given an SCODE and method name, verifies
  *						that the SCODE can legally be returned from
  *						thet method. Prints out a debug string if

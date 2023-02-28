@@ -1,9 +1,9 @@
 /*
  *  M S P S T . H
- *	
+ *
  *  This file lists internal properties of the Microsoft Personal
  *  Information Store
- *	
+ *
  *  Copyright (c) 2009 Microsoft Corporation. All Rights Reserved.
  */
 
@@ -97,5 +97,3 @@
                                 0xd9, 0x6e, 0x00, 0x00 }
 
 #endif  /* _MSPST_H_ */
-
-

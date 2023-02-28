@@ -1034,4 +1034,3 @@
 
 
 #endif	/* MAPITAGS_H */
-

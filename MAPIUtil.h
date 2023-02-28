@@ -14,7 +14,6 @@
 #pragma once
 #endif
 
-
 #if defined (WIN64) && !defined (_WIN64)
 #define _WIN64
 #endif
@@ -854,7 +853,7 @@ STDAPI_(VOID)			DeinitMapiUtil(VOID);
 
 /*
  *	Entry point names.
- *	
+ *
  *	These are for new entry points defined since MAPI first shipped
  *	in Windows 95. Using these names in a GetProcAddress call makes
  *	it easier to write code which uses them optionally.
@@ -888,4 +887,3 @@ typedef CREATECONVERSATIONINDEX FAR *LPCREATECONVERSATIONINDEX;
 #endif
 
 #endif /* _MAPIUTIL_H_ */
-

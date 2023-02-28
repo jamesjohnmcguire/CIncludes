@@ -32,7 +32,7 @@ extern "C" {
 
 #ifndef EXPORT
 #if defined(_WIN64) || defined (_WIN32)
-#define EXPORT 
+#define EXPORT
 #else
 #error	"Unknown Platform: MAPI is currently supported on Win32 and Win64"
 #endif

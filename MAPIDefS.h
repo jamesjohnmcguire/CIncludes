@@ -94,8 +94,14 @@ typedef WCHAR				TCHAR;
 typedef char				TCHAR;
 #endif
 
+
+#if _SAL_VERSION >= 20
+typedef _Null_terminated_ WCHAR FAR *			LPWSTR;
+typedef _Null_terminated_ const WCHAR FAR *	LPCWSTR;
+#else
 typedef WCHAR FAR *			LPWSTR;
 typedef const WCHAR FAR *	LPCWSTR;
+#endif
 typedef TCHAR FAR *			LPTSTR;
 typedef const TCHAR FAR *	LPCTSTR;
 typedef BYTE FAR *			LPBYTE;
@@ -676,12 +682,12 @@ struct _SRowSet_ ## _name \
 /* MAPI Allocation Routines ------------------------------------------------ */
 
 typedef SCODE (STDMETHODCALLTYPE ALLOCATEBUFFER)(
-	ULONG		cbSize,
+	ULONG			cbSize,
 	LPVOID FAR *	lppBuffer
 );
 
 typedef SCODE (STDMETHODCALLTYPE ALLOCATEMORE)(
-	ULONG		cbSize,
+	ULONG			cbSize,
 	LPVOID			lpObject,
 	LPVOID FAR *	lppBuffer
 );
@@ -1369,7 +1375,7 @@ typedef struct _SRestriction
 				LPSPropTagArray FAR *		lpPropTagArray) IPURE;		\
 	MAPIMETHOD(GetRowCount)												\
 		(THIS_	ULONG						ulFlags,					\
-				ULONG FAR *				lpulCount) IPURE;			\
+				ULONG FAR *					lpulCount) IPURE;			\
 	MAPIMETHOD(SeekRow)													\
 		(THIS_	BOOKMARK					bkOrigin,					\
 				LONG						lRowCount,					\
@@ -1413,11 +1419,11 @@ typedef struct _SRestriction
 		(THIS_	ULONG						cbInstanceKey,				\
 				LPBYTE						pbInstanceKey,				\
 				ULONG						ulFlags,					\
-				ULONG FAR *				lpulRowCount) IPURE;		\
+				ULONG FAR *					lpulRowCount) IPURE;		\
 	MAPIMETHOD(WaitForCompletion)										\
 		(THIS_	ULONG						ulFlags,					\
 				ULONG						ulTimeout,					\
-				ULONG FAR *				lpulTableStatus) IPURE;		\
+				ULONG FAR *					lpulTableStatus) IPURE;		\
 	MAPIMETHOD(GetCollapseState)										\
 		(THIS_	ULONG						ulFlags,					\
 				ULONG						cbInstanceKey,				\
@@ -1681,7 +1687,7 @@ typedef struct _flaglist
 				LPMAPIPROP FAR	*			lppMAPIPropEntry) IPURE;	\
 	MAPIMETHOD(CopyEntries)												\
 		(THIS_	LPENTRYLIST					lpEntries,					\
-				ULONG_PTR					ulUIParam,						\
+				ULONG_PTR					ulUIParam,					\
 				LPMAPIPROGRESS				lpProgress,					\
 				ULONG						ulFlags) IPURE;				\
 	MAPIMETHOD(DeleteEntries)											\
@@ -1916,7 +1922,7 @@ DECLARE_MAPI_INTERFACE_(IDistList, IMAPIContainer)
 				ULONG						ulFlags) IPURE;				\
 	MAPIMETHOD(DeleteMessages)											\
 		(THIS_	LPENTRYLIST					lpMsgList,					\
-				ULONG_PTR					ulUIParam,						\
+				ULONG_PTR					ulUIParam,					\
 				LPMAPIPROGRESS				lpProgress,					\
 				ULONG						ulFlags) IPURE;				\
 	MAPIMETHOD(CreateFolder)											\
@@ -1943,7 +1949,7 @@ DECLARE_MAPI_INTERFACE_(IDistList, IMAPIContainer)
 				ULONG						ulFlags) IPURE;				\
 	MAPIMETHOD(SetReadFlags)											\
 		(THIS_	LPENTRYLIST					lpMsgList,					\
-				ULONG_PTR					ulUIParam,						\
+				ULONG_PTR					ulUIParam,					\
 				LPMAPIPROGRESS				lpProgress,					\
 				ULONG						ulFlags) IPURE;				\
 	MAPIMETHOD(GetMessageStatus)										\
@@ -2392,7 +2398,7 @@ typedef struct _ADRPARM
 				ULONG_PTR					ulUIParam) IPURE;			\
 	MAPIMETHOD(GetState)												\
 		(THIS_	ULONG						ulFlags,					\
-				ULONG FAR *				lpulState) IPURE;			\
+				ULONG FAR *					lpulState) IPURE;			\
 
 #undef		 INTERFACE
 #define		 INTERFACE  IMAPIControl
@@ -2695,7 +2701,7 @@ DECLARE_MAPI_INTERFACE_PTR(IMAPIClientShutdown,	LPMAPICLIENTSHUTDOWN);
 #define		 INTERFACE  IMAPIClientShutdown
 DECLARE_MAPI_INTERFACE_(IMAPIClientShutdown, IUnknown)
 {
-	BEGIN_INTERFACE	
+	BEGIN_INTERFACE
 	MAPI_IUNKNOWN_METHODS(PURE)
 	MAPI_IMAPICLIENTSHUTDOWN_METHODS(PURE)
 };
@@ -2716,7 +2722,7 @@ DECLARE_MAPI_INTERFACE_PTR(IMAPIProviderShutdown,	LPMAPIPROVIDERSHUTDOWN);
 #define		 INTERFACE  IMAPIProviderShutdown
 DECLARE_MAPI_INTERFACE_(IMAPIProviderShutdown, IUnknown)
 {
-	BEGIN_INTERFACE	
+	BEGIN_INTERFACE
 	MAPI_IUNKNOWN_METHODS(PURE)
 	MAPI_IMAPIPROVIDERSHUTDOWN_METHODS(PURE)
 };
@@ -2728,5 +2734,3 @@ DECLARE_MAPI_INTERFACE_(IMAPIProviderShutdown, IUnknown)
 #endif
 
 #endif /* MAPIDEFS_H */
-
-

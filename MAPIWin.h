@@ -73,7 +73,7 @@ extern "C" {
 #endif
 
 
-#if defined(_MAC)	
+#if defined(_MAC)
 
 #define	MULDIV(x,y,z)				MulDiv(x,y,z)
 
@@ -98,7 +98,7 @@ extern LPVOID pinstX;
 
 #else
 #error	"Unknown Platform: MAPI is currently supported on Win32 and Win64"
-#endif	
+#endif
 
 #if (defined(_WIN64) || defined(_WIN32)) && !defined(_MAC)
 #define szMAPIDLLSuffix		"32"
@@ -272,5 +272,3 @@ BOOL WINAPI IsBadBoundedStringPtr(const void FAR* lpsz, UINT cchMax);
 #endif
 
 #endif /* __MAPIWIN_H__ */
-
-
