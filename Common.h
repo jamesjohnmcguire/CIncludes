@@ -10,8 +10,8 @@
 
 #define DllExport	__declspec( dllexport )
 
-const int GENERAL_ERROR = -1;
-const int CONNECTION_ERROR = -2;
+constexpr int GENERAL_ERROR = -1;
+constexpr int CONNECTION_ERROR = -2;
 
 #define E_GENERAL_ERROR		MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x200)
 #define E_CONNECTION_ERROR	MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x201)
