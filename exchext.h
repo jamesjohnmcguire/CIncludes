@@ -218,25 +218,25 @@ DECLARE_INTERFACE_(IExchExtCallback, IUnknown)
 {
 	BEGIN_INTERFACE
 
-    // *** IUnknown methods ***
-    STDMETHOD(QueryInterface) (THIS_ REFIID riid, LPVOID FAR * lppvObj) PURE;
-    STDMETHOD_(ULONG,AddRef) (THIS)  PURE;
-    STDMETHOD_(ULONG,Release) (THIS) PURE;
+	// *** IUnknown methods ***
+	STDMETHOD(QueryInterface) (THIS_ REFIID riid, LPVOID FAR * lppvObj) PURE;
+	STDMETHOD_(ULONG,AddRef) (THIS)  PURE;
+	STDMETHOD_(ULONG,Release) (THIS) PURE;
 
-    // *** IExchExtCallback methods ***
+	// *** IExchExtCallback methods ***
 	STDMETHOD(GetVersion) (THIS_ ULONG FAR * lpulVersion, ULONG ulFlags) PURE;
-    STDMETHOD(GetWindow) (THIS_ HWND FAR * lphwnd) PURE;
-    STDMETHOD(GetMenu) (THIS_ HMENU FAR * lphmenu) PURE;
-    STDMETHOD(GetToolbar) (THIS_ ULONG tbid, HWND FAR * lphwndTb) PURE;
-    STDMETHOD(GetSession) (THIS_ LPMAPISESSION FAR * lppses, 
-    					   LPADRBOOK FAR * lppab) PURE;
-    STDMETHOD(GetObject) (THIS_ LPMDB FAR * lppmdb, 
-    					  LPMAPIPROP FAR * lppmp) PURE;
-    STDMETHOD(GetSelectionCount) (THIS_ ULONG FAR * lpceid) PURE;
-    STDMETHOD(GetSelectionItem) (THIS_ ULONG ieid, ULONG FAR * lpcbEid,
-	    						 LPENTRYID FAR * lppeid, ULONG FAR * lpulType,
-	    						 LPTSTR lpszMsgClass, ULONG cbMsgClass,
-	    						 ULONG FAR * lpulMsgFlags, ULONG ulFlags) PURE;
+	STDMETHOD(GetWindow) (THIS_ HWND FAR * lphwnd) PURE;
+	STDMETHOD(GetMenu) (THIS_ HMENU FAR * lphmenu) PURE;
+	STDMETHOD(GetToolbar) (THIS_ ULONG tbid, HWND FAR * lphwndTb) PURE;
+	STDMETHOD(GetSession) (THIS_ LPMAPISESSION FAR * lppses, 
+						   LPADRBOOK FAR * lppab) PURE;
+	STDMETHOD(GetObject) (THIS_ LPMDB FAR * lppmdb, 
+						  LPMAPIPROP FAR * lppmp) PURE;
+	STDMETHOD(GetSelectionCount) (THIS_ ULONG FAR * lpceid) PURE;
+	STDMETHOD(GetSelectionItem) (THIS_ ULONG ieid, ULONG FAR * lpcbEid,
+								 LPENTRYID FAR * lppeid, ULONG FAR * lpulType,
+								 LPTSTR lpszMsgClass, ULONG cbMsgClass,
+								 ULONG FAR * lpulMsgFlags, ULONG ulFlags) PURE;
 	STDMETHOD(GetMenuPos) (THIS_ ULONG cmdid, HMENU FAR * lphmenu,
 						   ULONG FAR * lpmposMin, ULONG FAR * lpmposMax,
 						   ULONG ulFlags) PURE;
@@ -276,14 +276,14 @@ DECLARE_INTERFACE_(IExchExt, IUnknown)
 {
 	BEGIN_INTERFACE
 
-    // *** IUnknown methods ***
-    STDMETHOD(QueryInterface) (THIS_ REFIID riid, LPVOID FAR * lppvObj) PURE;
-    STDMETHOD_(ULONG,AddRef) (THIS) PURE;
-    STDMETHOD_(ULONG,Release) (THIS) PURE;
+	// *** IUnknown methods ***
+	STDMETHOD(QueryInterface) (THIS_ REFIID riid, LPVOID FAR * lppvObj) PURE;
+	STDMETHOD_(ULONG,AddRef) (THIS) PURE;
+	STDMETHOD_(ULONG,Release) (THIS) PURE;
 
-    // *** IExchExt methods ***
-    STDMETHOD(Install) (THIS_ LPEXCHEXTCALLBACK lpeecb, 
-    					ULONG mecontext, ULONG ulFlags) PURE;
+	// *** IExchExt methods ***
+	STDMETHOD(Install) (THIS_ LPEXCHEXTCALLBACK lpeecb, 
+						ULONG mecontext, ULONG ulFlags) PURE;
 };
 typedef IExchExt FAR * LPEXCHEXT;
 
@@ -305,12 +305,12 @@ DECLARE_INTERFACE_(IExchExtCommands, IUnknown)
 {
 	BEGIN_INTERFACE
 
-    // *** IUnknown methods ***
-    STDMETHOD(QueryInterface) (THIS_ REFIID riid, LPVOID FAR * lppvObj) PURE;
-    STDMETHOD_(ULONG,AddRef) (THIS) PURE;
-    STDMETHOD_(ULONG,Release) (THIS) PURE;
+	// *** IUnknown methods ***
+	STDMETHOD(QueryInterface) (THIS_ REFIID riid, LPVOID FAR * lppvObj) PURE;
+	STDMETHOD_(ULONG,AddRef) (THIS) PURE;
+	STDMETHOD_(ULONG,Release) (THIS) PURE;
 
-    // *** IExchExtCommands methods ***
+	// *** IExchExtCommands methods ***
 	STDMETHOD(InstallCommands) (THIS_ LPEXCHEXTCALLBACK lpeecb, HWND hwnd, 
 								HMENU hmenu, UINT FAR * lpcmdidBase, 
 								LPTBENTRY lptbeArray, UINT ctbe, 
@@ -341,12 +341,12 @@ DECLARE_INTERFACE_(IExchExtUserEvents, IUnknown)
 {
 	BEGIN_INTERFACE
 
-    // *** IUnknown methods ***
-    STDMETHOD(QueryInterface) (THIS_ REFIID riid, LPVOID FAR * lppvObj) PURE;
-    STDMETHOD_(ULONG,AddRef) (THIS)  PURE;
-    STDMETHOD_(ULONG,Release) (THIS) PURE;
+	// *** IUnknown methods ***
+	STDMETHOD(QueryInterface) (THIS_ REFIID riid, LPVOID FAR * lppvObj) PURE;
+	STDMETHOD_(ULONG,AddRef) (THIS)  PURE;
+	STDMETHOD_(ULONG,Release) (THIS) PURE;
 
-    // *** IExchExtUserEvents methods ***
+	// *** IExchExtUserEvents methods ***
 	STDMETHOD_(VOID,OnSelectionChange) (THIS_ LPEXCHEXTCALLBACK lpeecb) PURE;
 	STDMETHOD_(VOID,OnObjectChange) (THIS_ LPEXCHEXTCALLBACK lpeecb) PURE;
 };
@@ -367,12 +367,12 @@ DECLARE_INTERFACE_(IExchExtSessionEvents, IUnknown)
 {
 	BEGIN_INTERFACE
 
-    // *** IUnknown methods ***
-    STDMETHOD(QueryInterface) (THIS_ REFIID riid, LPVOID FAR * lppvObj) PURE;
-    STDMETHOD_(ULONG,AddRef) (THIS)  PURE;
-    STDMETHOD_(ULONG,Release) (THIS) PURE;
+	// *** IUnknown methods ***
+	STDMETHOD(QueryInterface) (THIS_ REFIID riid, LPVOID FAR * lppvObj) PURE;
+	STDMETHOD_(ULONG,AddRef) (THIS)  PURE;
+	STDMETHOD_(ULONG,Release) (THIS) PURE;
 
-    // *** IExchExtEvents methods ***
+	// *** IExchExtEvents methods ***
 	STDMETHOD(OnDelivery)(THIS_ LPEXCHEXTCALLBACK lpeecb) PURE;
 };
 typedef IExchExtSessionEvents FAR * LPEXCHEXTSESSIONEVENTS;
@@ -392,12 +392,12 @@ DECLARE_INTERFACE_(IExchExtMessageEvents, IUnknown)
 {
 	BEGIN_INTERFACE
 
-    // *** IUnknown methods ***
-    STDMETHOD(QueryInterface) (THIS_ REFIID riid, LPVOID FAR * lppvObj) PURE;
-    STDMETHOD_(ULONG,AddRef) (THIS)  PURE;
-    STDMETHOD_(ULONG,Release) (THIS) PURE;
+	// *** IUnknown methods ***
+	STDMETHOD(QueryInterface) (THIS_ REFIID riid, LPVOID FAR * lppvObj) PURE;
+	STDMETHOD_(ULONG,AddRef) (THIS)  PURE;
+	STDMETHOD_(ULONG,Release) (THIS) PURE;
 
-    // *** IExchExtMessageEvents methods ***
+	// *** IExchExtMessageEvents methods ***
 	STDMETHOD(OnRead)(THIS_ LPEXCHEXTCALLBACK lpeecb) PURE;
 	STDMETHOD(OnReadComplete)(THIS_ LPEXCHEXTCALLBACK lpeecb, 
 							  ULONG ulFlags) PURE;
@@ -428,12 +428,12 @@ DECLARE_INTERFACE_(IExchExtAttachedFileEvents, IUnknown)
 {
 	BEGIN_INTERFACE
 
-    // *** IUnknown methods ***
-    STDMETHOD(QueryInterface) (THIS_ REFIID riid, LPVOID FAR * lppvObj) PURE;
-    STDMETHOD_(ULONG,AddRef) (THIS)  PURE;
-    STDMETHOD_(ULONG,Release) (THIS) PURE;
+	// *** IUnknown methods ***
+	STDMETHOD(QueryInterface) (THIS_ REFIID riid, LPVOID FAR * lppvObj) PURE;
+	STDMETHOD_(ULONG,AddRef) (THIS)  PURE;
+	STDMETHOD_(ULONG,Release) (THIS) PURE;
 
-    // *** IExchExtAttachedFileEvents methods ***
+	// *** IExchExtAttachedFileEvents methods ***
 	STDMETHOD(OnReadPattFromSzFile)(THIS_ LPATTACH lpatt, LPTSTR lpszFile,
 									ULONG ulFlags) PURE;
 	STDMETHOD(OnWritePattToSzFile)(THIS_ LPATTACH lpatt, LPTSTR lpszFile,
@@ -459,12 +459,12 @@ DECLARE_INTERFACE_(IExchExtPropertySheets, IUnknown)
 {
 	BEGIN_INTERFACE
 
-    // *** IUnknown methods ***
-    STDMETHOD(QueryInterface) (THIS_ REFIID riid, LPVOID FAR * lppvObj) PURE;
-    STDMETHOD_(ULONG,AddRef) (THIS)  PURE;
-    STDMETHOD_(ULONG,Release) (THIS) PURE;
+	// *** IUnknown methods ***
+	STDMETHOD(QueryInterface) (THIS_ REFIID riid, LPVOID FAR * lppvObj) PURE;
+	STDMETHOD_(ULONG,AddRef) (THIS)  PURE;
+	STDMETHOD_(ULONG,Release) (THIS) PURE;
 
-    // *** IExchExtPropertySheet methods ***
+	// *** IExchExtPropertySheet methods ***
 	STDMETHOD_(ULONG,GetMaxPageCount) (THIS_ ULONG ulFlags) PURE;
 	STDMETHOD(GetPages) (THIS_ LPEXCHEXTCALLBACK lpeecb, ULONG ulFlags,
 						 LPPROPSHEETPAGE lppsp, ULONG FAR * lpcpsp) PURE;
@@ -488,12 +488,12 @@ DECLARE_INTERFACE_(IExchExtAdvancedCriteria, IUnknown)
 {
 	BEGIN_INTERFACE
 
-    // *** IUnknown methods ***
-    STDMETHOD(QueryInterface) (THIS_ REFIID riid, LPVOID FAR * lppvObj) PURE;
-    STDMETHOD_(ULONG,AddRef) (THIS)  PURE;
-    STDMETHOD_(ULONG,Release) (THIS) PURE;
+	// *** IUnknown methods ***
+	STDMETHOD(QueryInterface) (THIS_ REFIID riid, LPVOID FAR * lppvObj) PURE;
+	STDMETHOD_(ULONG,AddRef) (THIS)  PURE;
+	STDMETHOD_(ULONG,Release) (THIS) PURE;
 
-    // *** IExchExtAdvancedCriteria methods ***
+	// *** IExchExtAdvancedCriteria methods ***
 	STDMETHOD(InstallAdvancedCriteria) (THIS_ HWND hwnd, LPSRestriction lpres, 
 										BOOL fNot, LPENTRYLIST lpeidl, 
 										ULONG ulFlags) PURE;
@@ -542,7 +542,7 @@ DECLARE_INTERFACE_(IExchExtModeless, IUnknown)
 
 
 #define DEFINE_EXCHEXTGUID(name, b) \
-    DEFINE_GUID(name, 0x00020D00 | (b), 0, 0, 0xC0,0,0,0,0,0,0,0x46)
+	DEFINE_GUID(name, 0x00020D00 | (b), 0, 0, 0xC0,0,0,0,0,0,0,0x46)
 
 #ifndef NOEXCHEXTGUIDS
 DEFINE_EXCHEXTGUID(IID_IExchExtCallback,			0x10);
