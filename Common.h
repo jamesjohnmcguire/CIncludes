@@ -1,14 +1,16 @@
 #pragma once
 
+#include <Windows.h>
+
 ///////////////////////////////////////////////////////////////////////
-// Defines
+// Windows and COM definitions shared by the existing projects.
 ///////////////////////////////////////////////////////////////////////
 #define IN
 #define OUT
 #define INOUT
 #define RETVAL DWORD
 
-#define DllExport	__declspec( dllexport )
+#define DllExport __declspec(dllexport)
 
 constexpr int GENERAL_ERROR = -1;
 constexpr int CONNECTION_ERROR = -2;
